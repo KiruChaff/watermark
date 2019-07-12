@@ -1,0 +1,26 @@
+<annotation>
+	<folder>unsamples</folder>
+	<filename>2QC-4_65yPw.jpg</filename>
+	<path>/Users/kiru/Documents/Programming/C/codingChallenge/watermark/labelingImgs/unsamples/2QC-4_65yPw.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1080</width>
+		<height>1350</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>person</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>223</xmin>
+			<ymin>498</ymin>
+			<xmax>881</xmax>
+			<ymax>1177</ymax>
+		</bndbox>
+	</object>
+</annotation>
