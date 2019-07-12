@@ -13,7 +13,7 @@
 
 
 //define the mode of the program -- set a new Watermark(default): #define SET_WATERMARK - remove imprinted watermark: #define REMOVE_WATERMARK
-#define REMOVE_WATERMARK
+//#define REMOVE_WATERMARK
 
 #ifndef REMOVE_WATERMARK
 #define SET_WATERMARK
@@ -81,8 +81,8 @@ int main(){
 
         // loading two images
         int x1,y1,n1, init_x2, init_y2, n2;
-        unsigned char *data = stbi_load("image_test.jpg", &x1, &y1, &n1, 3);
-        unsigned char *watermark = stbi_load("watermark.jpg", &init_x2, &init_y2, &n2, 3);
+        unsigned char *data = stbi_load("stockimage.jpg", &x1, &y1, &n1, 3);
+        unsigned char *watermark = stbi_load("smiley.jpg", &init_x2, &init_y2, &n2, 3);
 
         int x2, y2;
 
@@ -90,7 +90,11 @@ int main(){
         y2 = (int) y1/5;
         x2 = (int) init_x2 *  y2 / init_y2;
 
-        stbir_resize_uint8(watermark, init_x2, init_y2, 0, watermark, x2, y2, 0, n2);
+        if (y2 > init_y2) {
+           y2 = init_y2;
+           x2 = init_x2;
+        } else
+          stbir_resize_uint8(watermark, init_x2, init_y2, 0, watermark, x2, y2, 0, n2);
 
 
         unsigned int pixels[y2][x2];
